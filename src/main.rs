@@ -1,3 +1,4 @@
+
 #[derive(Debug)]
 struct Rectangle {
     width: u32,
@@ -11,6 +12,13 @@ impl Rectangle {
 
     fn can_hold(&self, other : &Rectangle) -> bool {
         self.width > other.width && self.height > other.height
+    }
+
+    fn square(size : u32) -> Self {
+        Self {
+            width: size,
+            height: size,
+        }
     }
 }
 
@@ -28,6 +36,8 @@ fn main() {
         height: 45,
     };
     
+    let square = Rectangle::square(8);
+    println!("The area of the rectangle is {} square pixels.", square.area());
 
     println!("The area of the rectangle is {} square pixels.", rect1.area());
 
